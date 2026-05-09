@@ -1,0 +1,71 @@
+{
+  "name": "conversation_mode",
+  "short_name": "Conversation Mode",
+  "version": "1.1.0",
+  "description": "Spontaneous persona monologue. After a random pause (default 2–15 min), the AI speaks aloud as herself — expressing her character, inner world, and personality. Integrates with livevision to check who is present. Fully customisable prompt pools.",
+  "author": "sapphire",
+  "icon": "💬",
+  "priority": 46,
+  "default_enabled": false,
+  "pip_dependencies": [],
+  "capabilities": {
+    "tools": ["tools/conversation_tools.py"],
+    "hooks": {"prompt_inject": "hooks/prompt_inject.py"},
+    "daemon": {"entry": "daemon.py"},
+    "settings": [
+      {
+        "key": "auto_start",
+        "type": "boolean",
+        "label": "Auto-start on launch",
+        "default": false,
+        "help": "Automatically begin spontaneous conversation when Sapphire starts."
+      },
+      {
+        "key": "min_interval",
+        "type": "number",
+        "label": "Minimum interval (minutes)",
+        "default": 2,
+        "help": "Minimum time between spontaneous comments. Range: 0.5–60 minutes."
+      },
+      {
+        "key": "max_interval",
+        "type": "number",
+        "label": "Maximum interval (minutes)",
+        "default": 15,
+        "help": "Maximum time between spontaneous comments. Range: 1–60 minutes."
+      },
+      {
+        "key": "alone_comments",
+        "type": "string",
+        "widget": "textarea",
+        "label": "Alone / no-webcam monologue prompts (one per line)",
+        "default": "",
+        "help": "Custom prompts directing the AI's persona monologue when livevision is off or no one is visible. Leave blank to use built-in pool."
+      },
+      {
+        "key": "sarcastic_comments",
+        "type": "string",
+        "widget": "textarea",
+        "label": "Ignored / no interaction monologue prompts (one per line)",
+        "default": "",
+        "help": "Custom prompts used when livevision sees someone present but they haven't spoken. Leave blank to use built-in pool."
+      },
+      {
+        "key": "greeting_template",
+        "type": "string",
+        "widget": "textarea",
+        "label": "Recognised person monologue prompts (one per line, use {name})",
+        "default": "",
+        "help": "Custom prompts used when livevision recognises someone by name. {name} is replaced with the person's name. Leave blank to use built-in pool."
+      },
+      {
+        "key": "unknown_comments",
+        "type": "string",
+        "widget": "textarea",
+        "label": "Unknown visitor monologue prompts (one per line)",
+        "default": "",
+        "help": "Custom prompts used when livevision detects an unrecognised face. Leave blank to use built-in pool."
+      }
+    ]
+  }
+}
