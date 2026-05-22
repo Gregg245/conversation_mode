@@ -109,7 +109,7 @@ def _state():
 def _get_settings() -> dict:
     try:
         from core.plugin_loader import plugin_loader
-        return plugin_loader.get_plugin_settings('conversation') or {}
+        return plugin_loader.get_plugin_settings('conversation_mode') or {}
     except Exception:
         return {}
 

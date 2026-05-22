@@ -1,7 +1,7 @@
 {
   "name": "conversation_mode",
   "short_name": "Conversation Mode",
-  "version": "1.1.0",
+  "version": "1.0.2",
   "description": "Spontaneous persona monologue. After a random pause (default 2–15 min), the AI speaks aloud as herself — expressing her character, inner world, and personality. Integrates with livevision to check who is present. Fully customisable prompt pools.",
   "author": "sapphire",
   "icon": "💬",
@@ -9,9 +9,15 @@
   "default_enabled": false,
   "pip_dependencies": [],
   "capabilities": {
-    "tools": ["tools/conversation_tools.py"],
-    "hooks": {"prompt_inject": "hooks/prompt_inject.py"},
-    "daemon": {"entry": "daemon.py"},
+    "tools": [
+      "tools/conversation_tools.py"
+    ],
+    "hooks": {
+      "prompt_inject": "hooks/prompt_inject.py"
+    },
+    "daemon": {
+      "entry": "daemon.py"
+    },
     "settings": [
       {
         "key": "auto_start",

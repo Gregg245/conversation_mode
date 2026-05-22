@@ -1,39 +1,52 @@
-# Conversation Mode Plugin for Sapphire
+# Conversation Mode for Sapphire
 
-Spontaneous persona monologue — after a random pause (default 2–15 min), the AI speaks aloud as herself, expressing her character, inner world, and personality. Nothing appears in the chat; she just talks. Integrates with the LiveVision plugin to tailor the monologue to who is present.
+Sapphire speaks up on her own at random intervals, expressing her thoughts, personality, and inner world — without you having to say anything first. Nothing appears in the chat; she just talks.
 
-## Setup
+---
 
-### 1. Enable the plugin
-Settings > Plugins > Conversation Mode > Enable
+## How to enable
 
-### 2. No additional packages required
-This plugin uses only Sapphire internals. No pip installs, no system packages. Works on Linux and Windows as-is.
+1. Open Sapphire in your browser
+2. Go to **Settings → Plugins**
+3. Find **Conversation Mode** and switch it on
 
-### 3. Optional — enable LiveVision for camera-aware monologues
-If the LiveVision plugin is also active, the AI will check the webcam before speaking:
-- **Recognised person visible** — monologue addressed warmly to that person by name
-- **Unknown person visible** — persona response to an unfamiliar presence
-- **Camera on, nobody visible** — persona response to being overlooked
-- **LiveVision off or unavailable** — pure persona monologue, no audience assumed
+No extra software or pip packages needed.
 
-## Usage
+---
 
-Ask Sapphire things like:
+## How to use
 
+Once enabled, Sapphire will start speaking on her own every few minutes. You do not need to do anything — just let it run.
+
+You can also tell her:
 - "Start conversation mode"
 - "Stop conversation mode"
 - "Conversation status"
-- "Fire a conversation trigger now" *(useful for testing)*
+- "Fire a conversation trigger now" — useful for testing
 
-Once started, the AI will speak up on its own at random intervals — nothing appears in the chat, it just talks.
+---
+
+## Works with Live Vision
+
+If the **Live Vision** plugin is also on, Sapphire will check the camera before speaking:
+
+- **Someone she recognises is visible** — she speaks directly to that person by name
+- **An unknown person is visible** — she responds to the unfamiliar presence
+- **Camera on but nobody there** — she notices she's been alone
+- **Live Vision off** — she just speaks as herself with no audience assumed
+
+---
 
 ## Settings
 
-- **Auto-start on launch** — automatically begin when Sapphire starts
-- **Minimum interval (minutes)** — shortest time between monologues. Default 2
-- **Maximum interval (minutes)** — longest time between monologues. Default 15
-- **Alone / no-webcam monologue prompts** — custom prompts directing the AI's persona when LiveVision is off (one per line). Leave blank to use the built-in pool
-- **Ignored / no interaction monologue prompts** — custom prompts for when someone is visible but not talking (one per line). Leave blank to use the built-in pool
-- **Recognised person monologue prompts** — custom prompts when LiveVision recognises someone; use `{name}` as a placeholder (one per line). Leave blank to use the built-in pool
-- **Unknown visitor monologue prompts** — custom prompts for unrecognised faces (one per line). Leave blank to use the built-in pool
+Go to **Settings → Plugins → Conversation Mode** (gear icon):
+
+| Setting | What it does |
+|---|---|
+| Auto-start on launch | Conversation mode starts automatically when Sapphire boots |
+| Minimum interval (minutes) | Shortest time between monologues. Default 2 |
+| Maximum interval (minutes) | Longest time between monologues. Default 15 |
+| Alone / no-webcam prompts | Custom prompts for when she speaks alone (one per line). Leave blank to use built-in pool |
+| Ignored prompts | Custom prompts for when someone is visible but not interacting (one per line) |
+| Recognised person prompts | Custom prompts when she sees someone she knows — use `{name}` as a placeholder |
+| Unknown visitor prompts | Custom prompts for unrecognised faces |
